@@ -1,0 +1,50 @@
+# GitHub Pages deployment workflow
+name: Deploy website to GitHub Pages
+
+on:
+  # Start deployment whenever changes are pushed to main
+  push:
+    branches: ["main"]
+
+  # Allow the workflow to be started manually
+  workflow_dispatch:
+
+# Give the workflow the permissions required for Pages deployment
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Prevent multiple deployments from running at the same time
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  # Build and publish the website
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+
+    steps:
+      # Get the files from the repository
+      - name: Get repository files
+        uses: actions/checkout@v4
+
+      # Prepare GitHub Pages
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      # Package the website files for deployment
+      - name: Prepare website files
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      # Publish the website
+      - name: Publish to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5

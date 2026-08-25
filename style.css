@@ -1,0 +1,110 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 8px;
+    background-color: white;
+    color: black;
+}
+
+h1 {
+    font-size: 26px;
+    margin-bottom: 18px;
+}
+
+.input-section {
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 14px;
+}
+
+#numberInput {
+    width: 100px;
+    height: 20px;
+    margin-left: 5px;
+    margin-bottom: 4px;
+}
+
+button {
+    font-size: 12px;
+    padding: 2px 7px;
+    margin-right: 2px;
+    cursor: pointer;
+}
+
+fieldset {
+    width: 100%;
+    min-height: 10px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+legend {
+    font-size: 13px;
+}
+
+.number-row {
+    display: flex;
+    align-items: center;
+    height: 17px;
+    margin-bottom: 1px;
+}
+
+.number-value {
+    width: 55px;
+    font-size: 13px;
+}
+
+.number-type {
+    width: 55px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.even {
+    color: green;
+}
+
+.odd {
+    color: blue;
+}
+
+.row-button {
+    font-size: 11px;
+    padding: 1px 6px;
+    margin-left: 3px;
+}
+
+#results {
+    margin-top: 8px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.result-row {
+    margin-top: 6px;
+}
+
+.result-label {
+    display: inline-block;
+    width: 55px;
+}
+
+.result-value {
+    text-decoration: underline;
+    font-weight: normal;
+}
+
+.controls {
+    margin-top: 8px;
+    font-size: 12px;
+}
+
+.controls button {
+    margin-right: 3px;
+}
+
+.controls select {
+    font-size: 11px;
+    margin-left: 3px;
+}
